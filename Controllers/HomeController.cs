@@ -21,7 +21,7 @@ namespace IS445.Controllers
 
           if (string.IsNullOrEmpty(inputNumber))
           {
-            return Content("invalid input, please try again");
+            return Content("Invalid input, please try again");
           }
           else
           {
@@ -55,36 +55,22 @@ namespace IS445.Controllers
         {
             if (string.IsNullOrEmpty(inputPhrase))
             {
-                return Content("invalid input, please try again");
+                return Content("Invalid input, please try again");
             }
             else
             {
-                string formatted = formatPhrase(inputPhrase);
-                return View((object)formatted);
+                string[] words = inputPhrase.Split(' ');
+
+                string reverse = "";
+
+                foreach (string part in words)
+                {
+                    reverse = part + " " + reverse;
+                }
+
+                return View((object)reverse);
             }
         }
-
-        private string formatPhrase(string inputPhrase)
-        {
-            //JavaScript
-
-            //var phraseString = "Hello";
-            //return phraseString;
-
-            //C#
-            string value = inputPhrase;
-            string reverse = string.Empty;
-
-            char chSplit = ' ';
-
-            string[] words = value.Split(new char[] { chSplit }, StringSplitOptions.RemoveEmptyEntries);
-            foreach (string word in words)
-            {
-                reverse = word + chSplit + reverse;
-            }
-            return reverse;
-        }
-
         
     }//end HomeController
 }
