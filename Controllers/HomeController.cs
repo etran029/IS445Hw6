@@ -72,7 +72,7 @@ namespace IS445.Controllers
             //return phraseString;
 
             //C#
-            string value = "My Name is Eric";
+            string value = inputPhrase;
             string reverse = string.Empty;
 
             char chSplit = ' ';
