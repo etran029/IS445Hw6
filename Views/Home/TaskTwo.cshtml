@@ -1,0 +1,11 @@
+﻿@{
+    ViewBag.Title = "TaskTwo";
+}
+
+<h2>Task Two</h2>
+@using (Html.BeginForm("FormatPhraseReverse", "Home"))
+{
+  <label for="inputPhrase">Please input a phrase: </label>
+  <input type="text" name="inputPhrase" id="inputPhrase" value=""/>
+  <input type="submit" name="submit" value="submit" />
+}
