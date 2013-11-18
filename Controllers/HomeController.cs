@@ -68,11 +68,21 @@ namespace IS445.Controllers
         {
             //JavaScript
 
-            var phraseString = "Hello";
-            return phraseString;
+            //var phraseString = "Hello";
+            //return phraseString;
 
             //C#
+            string value = "My Name is Eric";
+            string reverse = string.Empty;
 
+            char chSplit = ' ';
+
+            string[] words = value.Split(new char[] { chSplit }, StringSplitOptions.RemoveEmptyEntries);
+            foreach (string word in words)
+            {
+                reverse = word + chSplit + reverse;
+            }
+            return reverse;
         }
 
         
